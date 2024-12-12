@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Day17_1
 {
-    internal class Monster
+    
+    abstract class Monster
     {
         public int MonsterLevel;
         public string MonsterName;
-        MobType MonsterMobType;
+        public MobType MonsterMobType;
 
         public Monster()
         {
@@ -25,7 +26,12 @@ namespace Day17_1
             this.MonsterLevel = level;
             this.MonsterName = name;
         }
+        
 
+
+
+        public abstract void BaseAttack();
+        
 
 
 

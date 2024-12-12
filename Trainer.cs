@@ -9,14 +9,17 @@ namespace Day17_1
 {
     public enum MobType
     {
-        Normal, Fire, Water, Grass
+        Normal, Fire, Water, Grass, electricity
     }
     internal class Trainer
     {
         public int havebadge;
         public string TrainerName;
         public string StartingName;
-        Monster[] TotalMonster ;
+        public Monster[] TotalMonster ;
+
+        int arrsize = 1;
+
         
         public Trainer(string trainername, string monstername)
         {
@@ -25,18 +28,49 @@ namespace Day17_1
             TotalMonster = new Monster[6];
         }
 
-        public Trainer(Monster monster)
+        public Trainer(Pikachu pikachu)
         {
             TotalMonster = new Monster[6];
 
-            TotalMonster[0] = monster;
+            TotalMonster[0] = pikachu;
+        }
+
+        
+        public void AddMonster(Monster monster)
+        {
+            Console.WriteLine(arrsize);
+            if (arrsize >= 6)
+            {
+                Console.WriteLine("경 고 : arrsize 6됌");
+            }
+            else if (arrsize < 6)
+            {
+                TotalMonster[arrsize] = monster;
+                arrsize++;
+            }
+
+        }
+
+        public void AllAttack()
+        {
+            for (int i = 0; i < TotalMonster.Length; i++)
+            {
+                TotalMonster[i]?.BaseAttack();
+            }
 
 
         }
+
+
+
         public void ShowFirstMob()
         {
-            Console.WriteLine(TotalMonster[0].MonsterLevel);
-            Console.WriteLine(TotalMonster[0].MonsterName);
+            for(int i = 0; i < TotalMonster.Length; i++)
+            {
+                Console.WriteLine($"TotalMonster[{i}].MonsterLevel : "+TotalMonster[i]?.MonsterLevel);
+                Console.WriteLine($"TotalMonster[{i}].MonsterName " + TotalMonster[i]?.MonsterName);
+            }
+           
         }
 
         public string ChangeMonster(string changemonster)
@@ -45,6 +79,11 @@ namespace Day17_1
 
             return StartingName;
         }
+
+        
+
+
+
 
     }
 }
