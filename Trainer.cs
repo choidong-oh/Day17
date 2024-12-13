@@ -11,7 +11,7 @@ namespace Day17_1
     {
         Normal, Fire, Water, Grass, electricity
     }
-    internal class Trainer
+    class Trainer
     {
         public int havebadge;
         public string TrainerName;
@@ -38,7 +38,6 @@ namespace Day17_1
         
         public void AddMonster(Monster monster)
         {
-            Console.WriteLine(arrsize);
             if (arrsize >= 6)
             {
                 Console.WriteLine("경 고 : arrsize 6됌");
@@ -79,11 +78,6 @@ namespace Day17_1
 
             return StartingName;
         }
-
-        
-
-
-
 
     }
 }

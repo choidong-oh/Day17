@@ -25,13 +25,11 @@ namespace Day17_1
             //trainer.ShowFirstMob();
 
             Pikachu pikachu = new Pikachu(MobType.electricity, "피카츄", 3);
-            Trainer trainer = new Trainer(pikachu);//0
             Charmander charmander = new Charmander(MobType.Fire, "파이리", 5);
-
             Bulbasaur bulbasaur = new Bulbasaur(MobType.Normal, "이상해 씨", 1);
             Squirtle squirtle = new Squirtle(MobType.Water, "꼬부기", 2);
 
-            //함수 대입??
+            Trainer trainer = new Trainer(pikachu);//0
             trainer.AddMonster(charmander);//1
             trainer.AddMonster(bulbasaur);//2
             trainer.AddMonster(squirtle);//3
@@ -39,9 +37,17 @@ namespace Day17_1
             trainer.AddMonster(squirtle);//5
             trainer.AddMonster(charmander);//6부터 추가 안됌
 
+            //배열의 각 클래스를 담아
+            //각클래스의 BaseAttack() 가져옴
             trainer.AllAttack();
 
+            //출력
             trainer.ShowFirstMob();
+           
+
+
+
+
 
         }
     }

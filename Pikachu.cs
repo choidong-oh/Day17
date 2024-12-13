@@ -18,8 +18,5 @@ namespace Day17_1
             this.MonsterName = name;
             this.MonsterLevel = level;
         }
-
-
-
     }
 }
